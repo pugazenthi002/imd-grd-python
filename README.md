@@ -1,4 +1,4 @@
-# imd-grd-python
+# IMD-GRD-Python
 this script downloads and extracts IMD grd datasets for sepcific locations and time periods and outputs them into csv files
 
 based on imdlib from iamsaswata: https://github.com/iamsaswata/imdlib
