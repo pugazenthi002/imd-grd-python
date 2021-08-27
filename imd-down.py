@@ -4,6 +4,7 @@ import pandas as pd
 import os, glob
 import os.path
 from os import path
+
 csv_file = 'latlon-input.csv'
 start_yr = int(input("Enter start year : "))
 end_yr = int(input("Enter end year(till 2020) : ")) 
@@ -17,6 +18,7 @@ with open(csv_file, 'r') as f:
 pars = ["rain","tmax","tmin"]
 for i in range(len(lats)):
     for variable in pars: 
+        os.makedirs(variable, exist_ok=False)
         lat=lats[i]
         lon=lons[i]
         #variable = 'rain' # other options are ('tmin'/ 'tmax')
