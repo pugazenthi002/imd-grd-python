@@ -4,7 +4,7 @@ import pandas as pd
 import os, glob
 import os.path
 from os import path
-
+os.makedirs("temp", exist_ok=True)
 csv_file = 'latlon-input.csv'
 start_yr = int(input("Enter start year : "))
 end_yr = int(input("Enter end year(till 2020) : ")) 
@@ -18,7 +18,7 @@ with open(csv_file, 'r') as f:
 pars = ["rain","tmax","tmin"]
 for i in range(len(lats)):
     for variable in pars: 
-        os.makedirs(variable, exist_ok=False)
+        os.makedirs(variable, exist_ok=True)
         lat=lats[i]
         lon=lons[i]
         #variable = 'rain' # other options are ('tmin'/ 'tmax')
@@ -43,10 +43,11 @@ for i in range(len(lats)):
     mer1=f1.merge(f2,on='DateTime')
     mer2=mer1.merge(f3,on='DateTime')
     mer2.to_csv(str(f'{lats[i]:.2f}') + '_' + str(f'{lons[i]:.2f}') + '.csv',header=['Date','Tmax','Tmin','Rain'],index=False)
-    
-    
+        
 
     filelist = glob.glob(os.path.join("*_"+ str(f'{lats[i]:.2f}') + '_' + str(f'{lons[i]:.2f}') + '.csv'))
     for f in filelist:
         os.remove(f)
     print("created the file: " + str(f'{lats[i]:.2f}') + '_' + str(f'{lons[i]:.2f}') + '.csv and deleted the temp files') 
+    for f in os.listdir("temp"):
+        os.remove(os.path.join("temp", f))
