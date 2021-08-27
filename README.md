@@ -13,9 +13,13 @@ Prerequisites
  **(Don't change any of the file or folder names)**
 WORKING
 
-  1.extract the git 
+  1.extract the git
+  
   2.enter required latitudes and longitudes in lat-long.csv file **(Don't change any of the file or folder names)**
+  
   3.execute imd-down.py
+  
   4.enter start year and end year when prompted
+  
   5.output files will be generated in the root folder
   
