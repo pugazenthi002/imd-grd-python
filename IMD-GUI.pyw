@@ -12,10 +12,11 @@ if len(sys.argv) == 1:
     form = sg.FlexForm('IMD-GRD-EXTRACT', default_element_size=(40, 1))
     choices = list(reversed(range(1901,2021)))
     layout = [
-        [sg.Text('Downloading IMD gridded Data as CSV Files', size=(40, 1), font=("Helvetica", 20))],
-        [sg.Text('Start year',size=(15,1)),sg.Text('end year',size=(15,1))],
+        [sg.Text('Downloading IMD gridded Data as CSV Files', size=(40, 1), font=("Helvetica", 14))],
+        [sg.Text('choose the time range to download',size=(30,1))],
+        [sg.Text('Start year',size=(10,1), justification='center'),sg.Text('End year',size=(10,1),justification='center')],
         [sg.InputCombo((choices),size=(10, 4)),sg.InputCombo((choices),size=(10, 4))],
-        [sg.Text('Document to open')],
+        [sg.Text('Coordinates input file')],
         [sg.In(), sg.FileBrowse()],
         [sg.Submit(), sg.Cancel()]
         ]
@@ -66,5 +67,5 @@ for i in range(len(lats)):
     print("created the file: " + str(f'{lats[i]:.2f}') + '_' + str(f'{lons[i]:.2f}') + '.csv and deleted the temp files') 
     for f in os.listdir("temp"):
         os.remove(os.path.join("temp", f))
-sg.Popup('done')
+sg.Popup('done downloading')
 sg.close
