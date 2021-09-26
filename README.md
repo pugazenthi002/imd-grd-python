@@ -20,7 +20,7 @@ WORKING
   
   2.enter required latitudes and longitudes in lat-long.csv file **(Don't change any of the file or folder names)**
   
-  3.execute imd-down.py or if you want GUI use imd-GUI.pyw
+  3.execute imd-down.py or if you want GUI use IMD-GUI.pyw
   
   4.enter start year and end year when prompted
   
