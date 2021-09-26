@@ -16,7 +16,7 @@ if len(sys.argv) == 1:
         [sg.Text('choose the time range to download',size=(30,1))],
         [sg.Text('Start year',size=(10,1), justification='center'),sg.Text('End year',size=(10,1),justification='center')],
         [sg.InputCombo((choices),size=(10, 4)),sg.InputCombo((choices),size=(10, 4))],
-        [sg.Text('Coordinates input file (csv file with lat as fist coloumn and lon as second coloumn)', size=(50,2))],
+        [sg.Text('Coordinates input file (csv file with lat as fist coloumn and lon as second coloumn)', size=(40,2))],
         [sg.In(), sg.FileBrowse()],
         [sg.Submit(), sg.Cancel()]
         ]
