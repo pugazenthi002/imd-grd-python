@@ -8,7 +8,9 @@ INSTALLATION
 Prerequisites
 1.python version 3.x:
 2.imdlib installation using pip:
-    pip install imdlib
+    pip3 install imdlib
+3.GUI library PySimpleGUI for easy user interface
+    pip3 install pysimplegui
     
  **(Don't change any of the file or folder names)**
 
