@@ -12,7 +12,7 @@ Prerequisites
 3.GUI library PySimpleGUI for easy user interface
     pip3 install pysimplegui
  
- **you can download all libraries with single command :- "pip3 install -r requirements.txt"**
+ **you can download all libraries with single command :- "pip3 install -r requirements.txt" or "pip install -r requirements.txt"** 
  
  **(Don't change any of the file or folder names)**
 
