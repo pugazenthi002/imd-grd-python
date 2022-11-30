@@ -60,19 +60,19 @@ for i in range(len(lats)):
     if (tmaxf) and (tminf) and (rainf):    
         mer1=f1.merge(f2,on='DateTime')
         mer2=mer1.merge(f3,on='DateTime')
-        mer2.to_csv(str(f'{lats[i]:.2f}') + '_' + str(f'{lons[i]:.2f}') + '.csv',header=['Date','Tmax','Tmin','Rain'],index=False)
+        mer2.to_csv(str(f'{lats[i]:.5f}') + '_' + str(f'{lons[i]:.5f}') + '.csv',header=['Date','Tmax','Tmin','Rain'],index=False)
     elif (not tmaxf) and (tminf) and (rainf):
         mer2=f2.merge(f3,on='DateTime')
-        mer2.to_csv(str(f'{lats[i]:.2f}') + '_' + str(f'{lons[i]:.2f}') + '.csv',header=['Date','Tmin','Rain'],index=False)
+        mer2.to_csv(str(f'{lats[i]:.5f}') + '_' + str(f'{lons[i]:.5f}') + '.csv',header=['Date','Tmin','Rain'],index=False)
     elif (tmaxf) and (not tminf) and (rainf):
         mer1=f1.merge(f3,on='DateTime')
-        mer1.to_csv(str(f'{lats[i]:.2f}') + '_' + str(f'{lons[i]:.2f}') + '.csv',header=['Date','Tmax','Rain'],index=False)
+        mer1.to_csv(str(f'{lats[i]:.5f}') + '_' + str(f'{lons[i]:.5f}') + '.csv',header=['Date','Tmax','Rain'],index=False)
     elif (not tmaxf) and (not tminf) and (rainf):
         print("only-rain")
-        f3.to_csv(str(f'{lats[i]:.2f}') + '_' + str(f'{lons[i]:.2f}') + '.csv',header=['Date','Rain'],index=False)
+        f3.to_csv(str(f'{lats[i]:.5f}') + '_' + str(f'{lons[i]:.5f}') + '.csv',header=['Date','Rain'],index=False)
     elif (tmaxf) and (tminf) and (not rainf):
         mer1=f1.merge(f2,on='DateTime')
-        mer1.to_csv(str(f'{lats[i]:.2f}') + '_' + str(f'{lons[i]:.2f}') + '.csv',header=['Date','Tmax','Tmin'],index=False)
+        mer1.to_csv(str(f'{lats[i]:.5f}') + '_' + str(f'{lons[i]:.5f}') + '.csv',header=['Date','Tmax','Tmin'],index=False)
     else:
         print("nothing to do")
         exit
