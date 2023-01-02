@@ -9,15 +9,15 @@ from os import path
 
 def progress():
 
-    playout = [[sg.Text('running '+ str(i+1) +' out of '+ str(len(lats)))],      
-               [sg.ProgressBar(len(lats), orientation='h', size=(50, 20), key='progressbar')],      
+    playout = [[sg.Text('running '+ str(i+1) +' out of '+ str(len(lats)))],
+               [sg.ProgressBar(len(lats), orientation='h', size=(50, 20), key='progressbar')],
                [sg.CloseButton("Close")]]
 
     window1 = sg.Window('Progress').Layout(playout)
     progress_bar = window1.find_element('progressbar')
     event, values = window1.Read(timeout=0)
     if event == sg.WIN_CLOSED or event == 'Close':
-        exit()      
+        sys.exit()
     progress_bar.UpdateBar(i + 1)
     time.sleep(2)
 
@@ -40,7 +40,7 @@ if len(sys.argv) == 1:
     button, values = form.Layout(layout).Read()
     if button == sg.WIN_CLOSED or button == 'Cancel':
         form.close()
-        exit()
+        sys.exit()
     start_yr=values[0]
     end_yr=values[1]
     csv_file = values[2]
@@ -117,8 +117,8 @@ for i in range(len(lats)):
         mer1=f1.merge(f2,on='DateTime')
         mer1.to_csv(latlongname + '_' + lonlongname + '.csv',header=['Date','Tmax','Tmin'],index=False)
     else:
+        sys.exit()
         #print("nothing to do")
-        exit
     filelist = glob.glob(os.path.join("*_"+ latlongname + '_' + lonlongname + '.csv'))
     for f in filelist:
         os.remove(f)
