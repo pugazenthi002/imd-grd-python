@@ -11,6 +11,7 @@ Prerequisites
     2.imdlib installation using pip:
         pip3 install imdlib
     3.GUI library PySimpleGUI for easy user interface
+        pip3 install PySimpleGUI
 
  **(Don't change any of the file or folder names)**
 
