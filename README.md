@@ -6,12 +6,12 @@ based on imdlib from iamsaswata: https://github.com/iamsaswata/imdlib
 INSTALLATION
 
 Prerequisites
-1.python version 3.x:
-2.imdlib installation using pip:
-    pip3 install imdlib
-3.GUI library PySimpleGUI for easy user interface
-    pip3 install pysimplegui
-    
+
+    1.python version 3.x:
+    2.imdlib installation using pip:
+        pip3 install imdlib
+    3.GUI library PySimpleGUI for easy user interface
+
  **(Don't change any of the file or folder names)**
 
 WORKING
