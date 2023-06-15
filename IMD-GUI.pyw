@@ -6,6 +6,19 @@ import pandas as pd
 import os, glob,time
 import os.path
 from os import path
+import requests
+from bs4 import BeautifulSoup
+url = 'https://www.imdpune.gov.in/cmpg/Griddata/Rainfall_25_Bin.html'
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+if response.status_code == 200:
+    element = soup.find('select', id='rain')
+    dropdown=element.find_all('option')[1]
+    zz=dropdown['value']
+    print(int(zz))
+else:
+    print('check internet connection')
 
 def progress():
 
@@ -26,7 +39,7 @@ os.makedirs("temp", exist_ok=True)
 if len(sys.argv) == 1:
     sg.ChangeLookAndFeel('GreenTan')
     form = sg.FlexForm('IMD-GRD-EXTRACT', default_element_size=(40, 1))
-    choices = list(reversed(range(1901,2021)))
+    choices = list(reversed(range(1901,int(zz)+1)))
     layout = [
         [sg.Text('Downloading IMD gridded Data as CSV Files', size=(40, 1), font=("Helvetica", 14))],
         [sg.Text('choose the time range to download',size=(30,1))],
