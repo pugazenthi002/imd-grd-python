@@ -16,7 +16,6 @@ if response.status_code == 200:
     element = soup.find('select', id='rain')
     dropdown=element.find_all('option')[1]
     zz=dropdown['value']
-    print(int(zz))
 else:
     print('check internet connection')
 
