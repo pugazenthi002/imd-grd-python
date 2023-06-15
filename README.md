@@ -12,6 +12,9 @@ Prerequisites
         pip3 install imdlib
     3.GUI library PySimpleGUI for easy user interface
         pip3 install PySimpleGUI
+    4.For getting html and depharsing 
+        pip install requests
+        pip install bs4
 
  **(Don't change any of the file or folder names)**
 
